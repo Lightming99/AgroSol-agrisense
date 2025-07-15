@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriSense: Multimodal Neuro-Symbolic AI for Agricultural Intelligence</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-seedling"></i>
+                <span>AgriSense</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#research" class="nav-link">Research</a></li>
+                <li><a href="#diagrams" class="nav-link">System Diagrams</a></li>
+                <li><a href="#architecture" class="nav-link">Architecture</a></li>
+                <li><a href="#innovations" class="nav-link">Innovations</a></li>
+                <li><a href="#applications" class="nav-link">Applications</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="animated-bg"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="highlight">AgriSense</span>
+                    <span class="typewriter" id="typewriter"></span>
+                </h1>
+                <p class="hero-subtitle">Multimodal Neuro-Symbolic AI for Agricultural Intelligence</p>
+                <p class="hero-description">
+                    A research concept for revolutionizing agriculture through advanced computer vision, 
+                    knowledge graph reasoning, and adaptive language generation. This system proposes 
+                    combining state-of-the-art deep learning with symbolic reasoning for comprehensive 
+                    agricultural assistance.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('research')">
+                        <i class="fas fa-microscope"></i>
+                        Explore Research Concept
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('contact')">
+                        <i class="fas fa-envelope"></i>
+                        Get in Touch
+                    </button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-elements">
+                    <div class="tech-card vision">
+                        <i class="fas fa-eye"></i>
+                        <span>Computer Vision</span>
+                        <div class="tech-detail">ViT + SupCon</div>
+                    </div>
+                    <div class="tech-card knowledge">
+                        <i class="fas fa-brain"></i>
+                        <span>Knowledge Graphs</span>
+                        <div class="tech-detail">Dynamic Learning</div>
+                    </div>
+                    <div class="tech-card reasoning">
+                        <i class="fas fa-cogs"></i>
+                        <span>Neuro-Symbolic AI</span>
+                        <div class="tech-detail">Explainable Reasoning</div>
+                    </div>
+                    <div class="tech-card multimodal">
+                        <i class="fas fa-comments"></i>
+                        <span>Multimodal Interface</span>
+                        <div class="tech-detail">Voice + Vision + Text</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Overview -->
+    <section id="research" class="section research-overview">
+        <div class="container">
+            <div class="section-header">
+                <h2>Research Concept Overview</h2>
+                <p>A comprehensive AI system concept for agricultural intelligence</p>
+            </div>
+            <div class="research-grid">
+                <div class="research-card" data-aos="fade-up">
+                    <div class="card-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Advanced Computer Vision</h3>
+                    <p>Proposed integration of Vision Transformer (ViT-B/16) with Supervised Contrastive Learning for robust agricultural image understanding, designed to handle seasonal and geographical variations in crop and livestock imagery.</p>
+                    <div class="card-features">
+                        <span class="feature-tag">ViT-B/16</span>
+                        <span class="feature-tag">SupCon Learning</span>
+                        <span class="feature-tag">Domain Adaptation</span>
+                    </div>
+                </div>
+                <div class="research-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Dynamic Knowledge Graphs</h3>
+                    <p>Conceptual framework for self-updating agricultural knowledge graphs utilizing reinforcement learning agents for continuous improvement with integrated expert validation mechanisms.</p>
+                    <div class="card-features">
+                        <span class="feature-tag">RL Agents</span>
+                        <span class="feature-tag">GNN Embeddings</span>
+                        <span class="feature-tag">Expert Validation</span>
+                    </div>
+                </div>
+                <div class="research-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Neuro-Symbolic Reasoning</h3>
+                    <p>Proposed Neural-LP based reasoning engine designed to provide transparent, explainable agricultural advice through logical rule inference and natural language generation capabilities.</p>
+                    <div class="card-features">
+                        <span class="feature-tag">Neural-LP</span>
+                        <span class="feature-tag">Explainable AI</span>
+                        <span class="feature-tag">Rule Inference</span>
+                    </div>
+                </div>
+                <div class="research-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>LLM-Enhanced Validation</h3>
+                    <p>Innovative concept where Large Language Models analyze user feedback and validate knowledge graph updates through iterative refinement and structural consistency checking protocols.</p>
+                    <div class="card-features">
+                        <span class="feature-tag">LLM APIs</span>
+                        <span class="feature-tag">Validation Loops</span>
+                        <span class="feature-tag">Consistency Checking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Diagrams Section -->
+    <section id="diagrams" class="section diagrams">
+        <div class="container">
+            <div class="section-header">
+                <h2>System Diagrams</h2>
+                <p>Visual representation of the proposed AgriSense architecture</p>
+            </div>
+            <div class="diagrams-container">
+                <div class="diagram-card">
+                    <div class="diagram-header">
+                        <h3>Comprehensive System Architecture</h3>
+                        <p>Complete flow from input processing to knowledge graph updates</p>
+                    </div>
+                    <div class="diagram-content">
+                        <div class="diagram-image">
+                            <img src="colorful.jpeg">
+                        <div class="diagram-description">
+                            <h4>System Flow Overview</h4>
+                            <p>This diagram illustrates the complete information flow through the proposed AgriSense system, from multimodal input processing through knowledge integration to final response generation with feedback loops.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="section architecture">
+        <div class="container">
+            <div class="section-header">
+                <h2>System Architecture</h2>
+                <p>Technical framework for multimodal AI integration</p>
+            </div>
+            <div class="architecture-container">
+                <div class="architecture-diagram">
+                    <div class="diagram-wrapper">
+                        <div class="architecture-flow">
+                            <!-- Input Layer -->
+                            <div class="arch-layer input-layer">
+                                <h3>Input Processing</h3>
+                                <div class="layer-components">
+                                    <div class="component voice-input">
+                                        <i class="fas fa-microphone"></i>
+                                        <span>Voice Input</span>
+                                        <div class="component-detail">Whisper ASR</div>
+                                    </div>
+                                    <div class="component image-input">
+                                        <i class="fas fa-camera"></i>
+                                        <span>Image Input</span>
+                                        <div class="component-detail">Agricultural Images</div>
+                                    </div>
+                                    <div class="component text-input">
+                                        <i class="fas fa-keyboard"></i>
+                                        <span>Text Input</span>
+                                        <div class="component-detail">Farmer Queries</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Processing Layer -->
+                            <div class="arch-layer processing-layer">
+                                <h3>Feature Processing</h3>
+                                <div class="layer-components">
+                                    <div class="component vision-processing">
+                                        <i class="fas fa-eye"></i>
+                                        <span>Vision Processing</span>
+                                        <div class="component-detail">ViT + SupCon</div>
+                                    </div>
+                                    <div class="component text-processing">
+                                        <i class="fas fa-brain"></i>
+                                        <span>Text Processing</span>
+                                        <div class="component-detail">BERT + Intent Recognition</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Knowledge Layer -->
+                            <div class="arch-layer knowledge-layer">
+                                <h3>Knowledge Integration</h3>
+                                <div class="layer-components">
+                                    <div class="component knowledge-graph">
+                                        <i class="fas fa-project-diagram"></i>
+                                        <span>Knowledge Graph</span>
+                                        <div class="component-detail">Dynamic Updates</div>
+                                    </div>
+                                    <div class="component rl-agent">
+                                        <i class="fas fa-robot"></i>
+                                        <span>RL Agent</span>
+                                        <div class="component-detail">Graph Updates</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Reasoning Layer -->
+                            <div class="arch-layer reasoning-layer">
+                                <h3>Reasoning Engine</h3>
+                                <div class="layer-components">
+                                    <div class="component neural-lp">
+                                        <i class="fas fa-cogs"></i>
+                                        <span>Neural-LP</span>
+                                        <div class="component-detail">Logical Reasoning</div>
+                                    </div>
+                                    <div class="component llm-validation">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>LLM Validation</span>
+                                        <div class="component-detail">Response Checking</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Output Layer -->
+                            <div class="arch-layer output-layer">
+                                <h3>Response Generation</h3>
+                                <div class="layer-components">
+                                    <div class="component response-gen">
+                                        <i class="fas fa-comments"></i>
+                                        <span>Natural Language</span>
+                                        <div class="component-detail">T5 Enhanced</div>
+                                    </div>
+                                    <div class="component feedback-loop">
+                                        <i class="fas fa-sync"></i>
+                                        <span>Feedback Loop</span>
+                                        <div class="component-detail">Continuous Learning</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="architecture-details">
+                    <div class="detail-tabs">
+                        <button class="tab-btn active" data-tab="pipeline">Processing Pipeline</button>
+                        <button class="tab-btn" data-tab="algorithms">Novel Algorithms</button>
+                        <button class="tab-btn" data-tab="integration">System Integration</button>
+                    </div>
+                    <div class="tab-content">
+                        <div class="tab-panel active" data-panel="pipeline">
+                            <h3>Information Processing Pipeline</h3>
+                            <div class="pipeline-steps">
+                                <div class="step">
+                                    <div class="step-icon"><i class="fas fa-upload"></i></div>
+                                    <div class="step-content">
+                                        <h4>Multimodal Input Processing</h4>
+                                        <p>Specialized encoders designed to handle voice (Whisper), image (ViT), and text (BERT) inputs with agricultural domain adaptations.</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-icon"><i class="fas fa-layer-group"></i></div>
+                                    <div class="step-content">
+                                        <h4>Feature Fusion & Integration</h4>
+                                        <p>Proposed novel ViT+SupCon integration with multi-modal attention mechanisms for unified agricultural representations.</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-icon"><i class="fas fa-search"></i></div>
+                                    <div class="step-content">
+                                        <h4>Knowledge Graph Query</h4>
+                                        <p>Dynamic knowledge retrieval concept using GNN embeddings with reinforcement learning-driven updates.</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <div class="step-icon"><i class="fas fa-cogs"></i></div>
+                                    <div class="step-content">
+                                        <h4>Neuro-Symbolic Reasoning</h4>
+                                        <p>Neural-LP engine concept for generating logical explanations with LLM-enhanced validation and consistency checking.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-panel" data-panel="algorithms">
+                            <h3>Novel Algorithmic Concepts</h3>
+                            <div class="algorithms-grid">
+                                <div class="algorithm-card">
+                                    <h4>ViT + SupCon Integration</h4>
+                                    <p>Proposed dual-head architecture with joint optimization for classification and contrastive learning in agricultural domains.</p>
+                                    <div class="algorithm-metrics">
+                                        <span class="metric">Novel Integration</span>
+                                        <span class="metric">Domain Adaptive</span>
+                                    </div>
+                                </div>
+                                <div class="algorithm-card">
+                                    <h4>LLM-KG Validation Framework</h4>
+                                    <p>Conceptual structural consistency checking with iterative refinement loops for knowledge graph quality assurance.</p>
+                                    <div class="algorithm-metrics">
+                                        <span class="metric">Iterative Refinement</span>
+                                        <span class="metric">Quality Assurance</span>
+                                    </div>
+                                </div>
+                                <div class="algorithm-card">
+                                    <h4>Temporal Knowledge Evolution</h4>
+                                    <p>Proposed reinforcement learning agents for dynamic knowledge graph updates with expert validation loops.</p>
+                                    <div class="algorithm-metrics">
+                                        <span class="metric">RL-Based Updates</span>
+                                        <span class="metric">Expert Validation</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-panel" data-panel="integration">
+                            <h3>System Integration Concept</h3>
+                            <p>The proposed AgriSense system integrates multiple AI paradigms through a carefully designed architecture that aims to ensure seamless information flow while maintaining explainability throughout the reasoning process.</p>
+                            <div class="integration-features">
+                                <div class="feature">
+                                    <i class="fas fa-sync"></i>
+                                    <span>Real-time Knowledge Updates</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Robust Error Handling</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-expand-arrows-alt"></i>
+                                    <span>Scalable Architecture</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-users"></i>
+                                    <span>Multi-user Support</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Innovations Section -->
+    <section id="innovations" class="section innovations">
+        <div class="container">
+            <div class="section-header">
+                <h2>Research Innovations</h2>
+                <p>Novel algorithmic concepts for agricultural AI advancement</p>
+            </div>
+            <div class="innovations-grid">
+                <div class="innovation-card" data-aos="fade-up">
+                    <div class="innovation-header">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Temporal-Aware Knowledge Evolution</h3>
+                    </div>
+                    <div class="innovation-content">
+                        <p>Proposed framework for maintaining temporal consistency in agricultural knowledge graphs with theoretical convergence guarantees to be developed.</p>
+                        <div class="innovation-features">
+                            <div class="feature-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Seasonal Adaptation</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Consistency Framework</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-sync"></i>
+                                <span>Dynamic Updates</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="innovation-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="innovation-header">
+                        <i class="fas fa-eye"></i>
+                        <h3>Domain-Adaptive Vision Learning</h3>
+                    </div>
+                    <div class="innovation-content">
+                        <p>Novel concept for ViT+SupCon integration with agricultural-specific contrastive learning designed for robust crop and disease classification.</p>
+                        <div class="innovation-features">
+                            <div class="feature-item">
+                                <i class="fas fa-seedling"></i>
+                                <span>Crop-Specific</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-globe"></i>
+                                <span>Geographic Robustness</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Performance Optimized</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="innovation-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="innovation-header">
+                        <i class="fas fa-robot"></i>
+                        <h3>LLM-Enhanced Validation</h3>
+                    </div>
+                    <div class="innovation-content">
+                        <p>Proposed automated knowledge graph validation concept with LLM-driven consistency checking and iterative refinement protocols.</p>
+                        <div class="innovation-features">
+                            <div class="feature-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Quality Assurance</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-repeat"></i>
+                                <span>Iterative Refinement</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-cogs"></i>
+                                <span>Automated Validation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section id="applications" class="section applications">
+        <div class="container">
+            <div class="section-header">
+                <h2>Proposed Agricultural Applications</h2>
+                <p>Potential real-world applications across diverse farming domains</p>
+            </div>
+            <div class="applications-showcase">
+                <div class="app-card crop-health" data-aos="fade-up">
+                    <div class="app-visual">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="app-content">
+                        <h3>Crop Health Monitoring</h3>
+                        <p>Proposed system for advanced disease detection and nutrient deficiency analysis with planned seasonal adaptation and geographic robustness capabilities.</p>
+                        <div class="app-features">
+                            <div class="feature-metric">
+                                <span class="metric-value">Disease</span>
+                                <span class="metric-label">Detection</span>
+                            </div>
+                            <div class="feature-metric">
+                                <span class="metric-value">Multi-Crop</span>
+                                <span class="metric-label">Support</span>
+                            </div>
+                            <div class="feature-metric">
+                                <span class="metric-value">24/7</span>
+                                <span class="metric-label">Monitoring</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-card cattle-farming" data-aos="fade-up" data-aos-delay="100">
+                    <div class="app-visual">
+                        <i class="fas fa-cow"></i>
+                    </div>
+                    <div class="app-content">
+                        <h3>Cattle Farming Intelligence</h3>
+                        <p>Comprehensive concept for livestock health monitoring, behavior analysis, and breeding optimization through proposed multimodal AI integration.</p>
+                        <div class="app-features">
+                            <div class="feature-metric">
+                                <span class="metric-value">Health</span>
+                                <span class="metric-label">Monitoring</span>
+                            </div>
+                            <div class="feature-metric">
+                                <span class="metric-value">Behavior</span>
+                                <span class="metric-label">Analysis</span>
+                            </div>
+                            <div class="feature-metric">
+                                <span class="metric-value">Smart</span>
+                                <span class="metric-label">Breeding</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="app-card precision-farming" data-aos="fade-up" data-aos-delay="200">
+                    <div class="app-visual">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <div class="app-content">
+                        <h3>Precision Agriculture</h3>
+                        <p>Proposed data-driven farming decision support with planned soil analysis, weather integration, and yield optimization recommendation capabilities.</p>
+                        <div class="app-features">
+                            <div class="feature-metric">
+                                <span class="metric-value">Soil</span>
+                                <span class="metric-label">Analysis</span>
+                            </div>
+                            <div class="feature-metric">
+                                <span class="metric-value">Weather</span>
+                                <span class="metric-label">Integration</span>
+                            </div>
+                            <div class="feature-metric">
+                                <span class="metric-value">Smart</span>
+                                <span class="metric-label">Decisions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+<section id="contact" class="section contact">
+    <div class="container">
+        <div class="section-header">
+            <h2>Contact & Collaboration</h2>
+            <p>Connect with me for research partnerships and academic collaboration</p>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="researcher-profile">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="profile-details">
+                        <h3>Anmol</h3>
+                        <p class="profile-title">B.Tech CSE Graduate & AI Researcher</p>
+                        <p class="profile-description">
+                            Passionate about advancing agricultural intelligence through cutting-edge AI research. 
+                            Focused on developing novel algorithms that bridge computer vision, knowledge graphs, 
+                            and neuro-symbolic reasoning for real-world agricultural applications.
+                        </p>
+                    </div>
+                </div>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <div class="method-details">
+                            <span class="method-label">Primary Email</span>
+                            <a href="mailto:2125bcse18@uithpu.ac.in">2125bcse18@uithpu.ac.in</a>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <div class="method-details">
+                            <span class="method-label">Secondary Email</span>
+                            <a href="mailto:as21212022@gmail.com">as21212022@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <i class="fas fa-phone"></i>
+                        <div class="method-details">
+                            <span class="method-label">Phone</span>
+                            <a href="tel:+919882793077">+91 9882793077</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-container">
+                <div class="form-header">
+                    <h3>Get in Touch</h3>
+                    <p>Interested in collaboration? Send me a message!</p>
+                </div>
+                <form class="contact-form" id="contactForm" 
+                      action="https://docs.google.com/forms/d/e/1FAIpQLSeujZtVyDbgsUZv9Lbi4-2u2TJb6DgvDLqYO04xVihEOYILdQ/formResponse" 
+                      method="POST" target="_blank">
+                    <div class="form-group">
+                        <input type="text" id="name" name="entry.2005620554" required>
+                        <label for="name">Your Name</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="entry.1045781291" required>
+                        <label for="email">Email Address</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="institution" name="entry.1166974658" required>
+                        <label for="institution">Contact Information</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="entry.839337160" rows="6" required></textarea>
+                        <label for="message">Your Message / Review or Query</label>
+                        <div class="form-line"></div>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Question Modal -->
+<div class="modal" id="questionModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Ask a Question</h3>
+            <button class="modal-close" onclick="closeModal('questionModal')">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form id="questionForm" 
+                  action="https://docs.google.com/forms/d/e/1FAIpQLSeujZtVyDbgsUZv9Lbi4-2u2TJb6DgvDLqYO04xVihEOYILdQ/formResponse" 
+                  method="POST" target="_blank">
+                <div class="form-group">
+                    <input type="text" id="q-name" name="entry.2005620554" required>
+                    <label for="q-name">Your Name</label>
+                    <div class="form-line"></div>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="q-email" name="entry.1045781291" required>
+                    <label for="q-email">Email Address</label>
+                    <div class="form-line"></div>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="q-contact" name="entry.1166974658" required>
+                    <label for="q-contact">Contact Information</label>
+                    <div class="form-line"></div>
+                </div>
+                <div class="form-group">
+                    <textarea id="q-question" name="entry.839337160" rows="5" required></textarea>
+                    <label for="q-question">Your Question</label>
+                    <div class="form-line"></div>
+                </div>
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-question-circle"></i>
+                        Submit Question
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- Floating Action Button -->
+    <div class="fab-container">
+        <button class="fab" id="fabMain">
+            <i class="fas fa-plus"></i>
+        </button>
+        <div class="fab-options">
+            <button class="fab-option" onclick="openModal('questionModal')" title="Ask a Question">
+                <i class="fas fa-question"></i>
+            </button>
+            <button class="fab-option" onclick="scrollToSection('contact')" title="Contact">
+                <i class="fas fa-envelope"></i>
+            </button>
+            <button class="fab-option" onclick="scrollToSection('home')" title="Back to Top">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-seedling"></i>
+                        <span>AgriSense</span>
+                    </div>
+                    <p>Advancing agricultural intelligence through cutting-edge multimodal neuro-symbolic AI research concepts.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Research</h4>
+                    <ul>
+                        <li><a href="#research">Concept Overview</a></li>
+                        <li><a href="#diagrams">System Diagrams</a></li>
+                        <li><a href="#architecture">Architecture</a></li>
+                        <li><a href="#innovations">Innovations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Applications</h4>
+                    <ul>
+                        <li><a href="#applications">Crop Health</a></li>
+                        <li><a href="#applications">Cattle Farming</a></li>
+                        <li><a href="#applications">Precision Agriculture</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:2125bcse18@uithpu.ac.in">Email</a></li>
+                        <li><a href="tel:+919882793077">Phone</a></li>
+                        <li><a href="#contact">Collaboration</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgriSense Research. All rights reserved.</p>
+                <p>Developed by Anmol - B.Tech CSE Graduate & AI Researcher</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
