@@ -298,46 +298,59 @@ function setupAnimations() {
 
 // Keep only the form animations
 // Updated form handling for Google Forms
-function setupFormHandling() {
-    const contactForm = document.getElementById('contactForm');
-    const questionForm = document.getElementById('questionForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', handleGoogleFormSubmit);
-        setupFormAnimations(contactForm);
-    }
-    
-    if (questionForm) {
-        questionForm.addEventListener('submit', handleGoogleFormSubmit);
-        setupFormAnimations(questionForm);
-    }
+
+function setupFormAnimations(form) {
+  // Your existing animation logic, if any
 }
 
-function handleGoogleFormSubmit(event) {
-    const form = event.target;
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    
-    // Show loading state
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
-    submitBtn.disabled = true;
-    
-    // Allow form to submit naturally to Google Forms
-    setTimeout(() => {
-        showNotification('Form submitted successfully! Thank you for your message.', 'success');
-        form.reset();
-        resetFormStyles(form);
-        
-        // Close modal if it's the question form
-        if (form.id === 'questionForm') {
-            closeModal('questionModal');
-        }
-        
-        // Reset button
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-    }, 1000);
+function showNotification(message, type) {
+  // Example: show your toast or alert
+  alert(message);
 }
+
+function closeModal(id) {
+  document.getElementById(id).style.display = 'none';
+}
+
+function setupFormHandling() {
+  const contactForm = document.getElementById('contactForm');
+  const questionForm = document.getElementById('questionForm');
+
+  [contactForm, questionForm].forEach(form => {
+    if (!form) return;
+    setupFormAnimations(form);
+
+    form.addEventListener('submit', function() {
+      const btn = this.querySelector('button[type="submit"]');
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+      btn.disabled = true;
+
+      const data = new FormData(this);
+      const obj = {};
+      data.forEach((v, k) => obj[k] = v);
+
+      localStorage.setItem('lastFormData', JSON.stringify(obj));
+      localStorage.setItem('formSubmitted', form.id === 'contactForm' ? 'contact' : 'question');
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const type = localStorage.getItem('formSubmitted');
+    if (type) {
+      if (type === 'contact') showNotification('Contact form submitted successfully! Thank you.', 'success');
+      else if (type === 'question') {
+        showNotification('Question submitted successfully! Thank you.', 'success');
+        closeModal('questionModal');
+      }
+      localStorage.removeItem('formSubmitted');
+      localStorage.removeItem('lastFormData');
+    }
+  });
+}
+
+// Initialize
+setupFormHandling();
+
 
 
 function setupFormAnimations(form) {
@@ -382,99 +395,7 @@ function handleInputChange(event) {
     }
 }
 
-function handleContactFormSubmit(event) {
-    event.preventDefault();
-    
-    const formData = new FormData(event.target);
-    const data = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        institution: formData.get('institution') || 'Not specified',
-        inquiryType: formData.get('inquiry-type'),
-        message: formData.get('message')
-    };
-    
-    submitFormData(data, 'Contact Form', event.target);
-}
-
-function handleQuestionFormSubmit(event) {
-    event.preventDefault();
-    
-    const formData = new FormData(event.target);
-    const data = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        category: formData.get('category'),
-        question: formData.get('question')
-    };
-    
-    submitFormData(data, 'Question Form', event.target);
-    closeModal('questionModal');
-}
-
-function submitFormData(data, formType, formElement) {
-    const submitBtn = formElement.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    
-    // Show loading state
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-    submitBtn.disabled = true;
-    
-    // Create email body
-    const emailBody = createEmailBody(data, formType);
-    
-    // Send email using EmailJS or mailto
-    sendEmail(data.email, formType, emailBody)
-        .then(() => {
-            showNotification('Message sent successfully!', 'success');
-            formElement.reset();
-            resetFormStyles(formElement);
-        })
-        .catch(() => {
-            showNotification('Failed to send message. Please try again.', 'error');
-        })
-        .finally(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        });
-}
-
-function createEmailBody(data, formType) {
-    let body = `New ${formType} Submission\n\n`;
-    body += `Name: ${data.name}\n`;
-    body += `Email: ${data.email}\n`;
-    
-    if (data.institution) {
-        body += `Institution: ${data.institution}\n`;
-    }
-    
-    if (data.inquiryType) {
-        body += `Inquiry Type: ${data.inquiryType}\n`;
-    }
-    
-    if (data.category) {
-        body += `Category: ${data.category}\n`;
-    }
-    
-    body += `\nMessage/Question:\n${data.message || data.question}`;
-    
-    return body;
-}
-
-function sendEmail(senderEmail, subject, body) {
-    return new Promise((resolve, reject) => {
-        // Create mailto link
-        const mailtoLink = `mailto:as21212022@gmail.com?subject=${encodeURIComponent(subject + ' - AgriSense')}&body=${encodeURIComponent(body)}`;
-        
-        // Open email client
-        window.location.href = mailtoLink;
-        
-        // Simulate success (since we can't detect if email was actually sent)
-        setTimeout(() => {
-            resolve();
-        }, 1000);
-    });
-}
+// Form handling functions removed as we're using direct Google Forms submission
 
 function resetFormStyles(form) {
     const formGroups = form.querySelectorAll('.form-group');
